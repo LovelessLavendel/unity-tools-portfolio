@@ -1,0 +1,65 @@
+﻿/**
+ * Visual Studio Dark Plus theme (Tabellen-Edition)
+ */
+.unity-code-body {
+    background-color: #1E1E1E !important;
+    padding: 16px 0 !important;
+    overflow-x: auto;
+}
+
+.code-table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+}
+
+    /* Spalte 1: Die Zeilennummern */
+    .code-table td.num, .code-table td.num-empty {
+        color: #858585;
+        text-align: right;
+        padding: 0 12px 0 16px !important;
+        width: 35px;
+        min-width: 35px;
+        border-right: 1px solid #3c3c3c; /* Der Trennstrich */
+        user-select: none; /* Verhindert manuelles Kopieren der Nummern */
+    }
+
+    /* Spalte 2: Der eigentliche C#-Code */
+    .code-table td.code-line {
+        padding: 0 16px 0 12px !important;
+        white-space: pre; /* Behält alle Tabs und Einrückungen bei */
+        color: #9CDCFE;
+    }
+
+/* --- DEINE VISUAL STUDIO CODEN-FARBEN --- */
+.token.comment {
+    color: #6A9955 !important;
+    font-style: italic;
+}
+
+.token.punctuation {
+    color: #D4D4D4 !important;
+}
+
+.token.number {
+    color: #B5CEA8 !important;
+}
+
+.token.string {
+    color: #CE9178 !important;
+}
+
+.token.keyword {
+    color: #569CD6 !important;
+    font-weight: bold;
+}
+
+.token.function, .token.class-name {
+    color: #4EC9B0 !important;
+}
+
+.token.operator {
+    color: #D4D4D4 !important;
+}
