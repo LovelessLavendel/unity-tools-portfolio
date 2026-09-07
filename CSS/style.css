@@ -1,0 +1,411 @@
+﻿/* ==========================================================================
+           INTEGRIERTES TECH-GRID DESIGN (SPALTEN VERTAUSCHT: LINKS SPECS, RECHTS CONTENT)
+           ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* Dein gewohnter Farbverlauf, damit alles aus einem Guss wirkt */
+    background: linear-gradient(to bottom, #4a4b4a 0%, #818382 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    padding-bottom: 60px;
+}
+
+/* Das Haupt-Grid-Layout: Technische Details links (300px), Hauptinhalt rechts (1fr) */
+.grid-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.welcome-section p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #f0f0f0;
+    margin-bottom: 30px;
+}
+
+    /* Header-Bereich auf der Unterseite mit Zurück-Button */
+    .tool-header {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+.btn-back {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: background 0.3s;
+}
+
+    .btn-back:hover {
+        background-color: rgba(255, 255, 255, 0.25);
+    }
+
+/* Linke Sidebar für die technischen Tool-Stats */
+.aside-tech-specs {
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    align-self: start; /* Verhindert das unschöne Langziehen */
+}
+
+    .aside-tech-specs h3 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        padding-bottom: 10px;
+    }
+
+    .aside-tech-specs ul {
+        list-style: none;
+    }
+
+    .aside-tech-specs li {
+        margin-bottom: 15px;
+        font-size: 0.95rem;
+        color: #e5e5e5;
+        display: flex;
+        flex-direction: column;
+    }
+
+        /* Kleine Label-Schrift über den Werten */
+        .aside-tech-specs li span.label {
+            font-size: 0.8rem;
+            color: #a1a1aa;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+
+/* Rechter Hauptinhalt */
+.content-main {
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+    .content-main h2 {
+        margin-bottom: 20px;
+        font-size: 2.8rem;
+    }
+
+    .content-main h4 {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        font-size: 1.9rem;
+    }
+
+    .content-main li {
+        margin-left: 50px;
+    }
+
+.tool-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #f0f0f0;
+    margin-bottom: 30px;
+}
+
+.content-main hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.menu-link {
+    color: #ffffff; /* Ändere dies in deine Wunschfarbe (z.B. weiß) */
+    text-decoration: none; /* Entfernt die hässliche Unterstreichung! */
+}
+
+    /* Verhindert, dass der Link nach dem Anklicken lila wird */
+    .menu-link:visited {
+        color: #ffffff; /* Bleibt auch nach dem Klicken weiß */
+    }
+
+    /* Optional: Ändert die Farbe leicht, wenn du mit der Maus drüberfährst */
+    .menu-link:hover {
+        color: #aaaaaa; /* Wird beim Drüberfahren leicht hellgrau */
+    }
+/* Platzhalter für deine Screenshots oder Gifs aus Unity */
+.media-placeholder {
+    width: 100%;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ccc;
+    font-style: italic;
+}
+/* Code Teil*/
+
+/* Der äußere Container im Unity-Stil */
+.unity-docs-code-block {
+    width: 100%;
+    max-width: 850px;
+    background-color: #1e1e1e; /* Dunkler Hintergrund */
+    border: 1px solid #333333; /* Sehr feiner, dezenter Rand */
+    border-radius: 4px; /* Leicht abgerundet wie bei Unity */
+    overflow: hidden;
+    margin: 20px 0;
+}
+/* Die Kopfzeile: Richtet Name und Icon perfekt aus */
+.unity-code-header {
+    background-color: #2a2a2a;
+    padding: 6px 16px;
+    border-bottom: 1px solid #333333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+}
+/* Das minimalistische Icon-Design */
+.unity-copy-btn {
+    background: transparent; /* Kein störender Kasten im Normalzustand */
+    color: #858585; /* Dezentes Grau wie in Visual Studio */
+    border: none; /* Kein Rahmen */
+    font-size: 1.1rem; /* Optimale Größe für das Symbol */
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: color 0.2s, background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    /* Hover-Effekt: Wenn man mit der Maus über das Icon fährt */
+    .unity-copy-btn:hover {
+        background-color: #383838; /* Dezenter Hintergrund-Highlight */
+        color: #ffffff; /* Symbol leuchtet weiß auf */
+    }
+
+    /* Visuelles Feedback nach dem Klicken (Erfolgszustand) */
+    .unity-copy-btn.copied {
+        color: #4ec9b0 !important; /* Symbol färbt sich in Unity-Cyan/Grün */
+        background-color: #12572b; /* Sanfter grüner Hintergrund */
+    }
+/**
+ * Visual Studio Dark Plus Color Engine für C#
+ */
+
+/* Hintergrund und Grundschriftart für das Codefenster */
+code[class*="language-"], pre[class*="language-"] {
+    color: #D4D4D4; /* Standard-Textfarbe (Weiß/Hellgrau) */
+    background: none;
+    font-family: 'Consolas', 'Monaco', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.6;
+    tab-size: 4;
+    hyphens: none;
+}
+
+/* Der dunkle Code-Fensterhintergrund */
+pre[class*="language-"] {
+    background: #1E1E1E !important; /* Original Visual Studio Dunkelgrau */
+    margin: 0;
+    padding: 16px;
+    overflow: auto;
+}
+
+/* --- HIER SIND DIE ECHTEN VISUAL STUDIO FARBEN --- */
+
+/* Kommentare (Grün) */
+.token.comment, .token.xml-comment {
+    color: #6A9955 !important;
+    font-style: italic;
+}
+
+/* C# Keywords wie public, class, void, string, private (Klassisches VS-Blau) */
+.token.keyword {
+    color: #569CD6 !important;
+    font-weight: bold;
+}
+
+/* Klassen-Namen und Datentypen wie EditorWindow, List, AdvancedCategorizedCleaner (Türkis/Cyan) */
+.token.class-name, .token.type {
+    color: #4EC9B0 !important;
+}
+
+/* Strings / Text in Anführungszeichen wie "Assets" (Pfirsich/Orange-Braun) */
+.token.string {
+    color: #CE9178 !important;
+}
+
+/* Zahlen wie 0, 5, 10 (Hellgrün/Gelb) */
+.token.number {
+    color: #B5CEA8 !important;
+}
+
+/* Unity-Funktionen und Methoden wie OnGUI, GUILayout, ShowWindow (Hellgelb) */
+.token.function {
+    color: #DCDCAA !important;
+}
+
+/* Interne Variablen und Felder (Hellblau) */
+.token.variable, .token.property {
+    color: #9CDCFE !important;
+}
+
+/* Sonderzeichen und Klammern wie { }, ( ), [ ] (Normales Grau) */
+.token.punctuation, .token.operator {
+    color: #D4D4D4 !important;
+}
+
+/* Präprozessoren wie #if, #endif oder Attribute wie [MenuItem] (Dunkles Gelb/Magenta) */
+.token.preprocessor, .token.annotation {
+    color: #CBD656 !important;
+}
+
+/* --- ZEILENNUMMERN STYLING --- */
+pre.line-numbers {
+    position: relative;
+    padding-left: 3.8em !important;
+    counter-reset: linenumber;
+}
+
+    pre.line-numbers > code {
+        position: relative;
+        white-space: inherit;
+    }
+
+.line-numbers .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: 16px;
+    font-size: 100%;
+    left: 0;
+    width: 3em;
+    letter-spacing: -1px;
+    border-right: 1px solid #2d2d2d; /* Dezenter Trennstrich */
+    user-select: none;
+}
+
+.line-numbers-rows > span {
+    display: block;
+    counter-increment: linenumber;
+}
+
+    .line-numbers-rows > span:before {
+        content: counter(linenumber);
+        color: #858585; /* Graue Zeilennummern */
+        display: block;
+        padding-right: 0.8em;
+        text-align: right;
+    }
+/* Der Dateiname in der Kopfzeile */
+.unity-file-name {
+    color: #c4c4c4;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* Der eigentliche Text- und Code-Inhalt */
+.unity-code-body pre {
+    margin: 0 !important;
+    padding: 16px !important;
+    max-height: 480px; /* Maximale Höhe, danach erscheint der Scrollbalken */
+    overflow: auto !important;
+    background-color: #1e1e1e !important;
+}
+
+.unity-code-body code {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace !important;
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important; /* Etwas mehr Zeilenabstand für bessere Lese-Rechtschreib-Übersicht */
+}
+
+
+/* Fixierter Footer ganz unten */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #818382;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+    footer p {
+        color: #1a1a1a;
+        font-size: 0.95rem;
+    }
+
+/* Responsive Anpassung für kleinere Bildschirme */
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .aside-tech-specs {
+        order: 2; /* Schiebt die Specs auf Smartphones unter den Text */
+    }
+
+    footer {
+        position: relative;
+    }
+}
+/* Verhindert unschöne Abstände in der Code-Tabelle */
+.code-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    /* Gestaltet die linke Spalte mit den Zeilennummern */
+    .code-table td.num {
+        user-select: none; /* Verhindert, dass Nummern beim Kopieren markiert werden */
+        text-align: right;
+        padding-right: 14px;
+        padding-left: 10px;
+        color: #858585; /* Das originale VS-Grau für Nummern */
+        font-family: 'Consolas', 'Monaco', monospace;
+        font-size: 0.9rem;
+        width: 45px; /* Feste Breite für die Nummernspalte */
+        border-right: 1px solid #2d2d2d; /* Dezenter Trennstrich zum Code */
+        vertical-align: top;
+        line-height: 1.6; /* Exakt der gleiche Zeilenabstand wie beim Code */
+    }
+
+    /* Gestaltet die rechte Spalte mit dem C#-Code */
+    .code-table td.code-line {
+        padding-left: 15px;
+        vertical-align: top;
+        line-height: 1.6;
+    }
+
+        /* Säubert die Prism-Standardabstände im Inneren der Tabelle */
+        .code-table td.code-line pre {
+            padding: 0 !important; /* Verhindert doppeltes Padding im Tabellen-Layout */
+            margin: 0 !important;
+            background: transparent !important; /* Hintergrund kommt schon vom äußeren Container */
+        }
