@@ -1,0 +1,332 @@
+﻿/* ==========================================================================
+   style.css - INTEGRIERTES TECH-GRID DESIGN (BEREINIGT & KORRIGIERT)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #4a4b4a 0%, #818382 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    padding-bottom: 60px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Scroll-Offset, damit die Überschrift nicht unter dem Header verschwindet */
+#cleaner, #tracker {
+    scroll-margin-top: 30px;
+}
+
+/* Das Haupt-Grid-Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.welcome-section p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #f0f0f0;
+    margin-bottom: 30px;
+}
+
+/* Header-Bereich auf der Unterseite mit Zurück-Button */
+.tool-header {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+}
+
+.btn-back {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: background 0.3s;
+}
+
+    .btn-back:hover {
+        background-color: rgba(255, 255, 255, 0.25);
+    }
+
+/* Linke Sidebar für die technischen Tool-Stats */
+.aside-tech-specs {
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    /* DIESE 3 ZEILEN SIND NEU UND ERZEUGEN DEN EFFEKT: */
+    position: sticky; /* Lässt die Sidebar am Bildschirm kleben */
+    top: 20px; /* Abstand zum oberen Rand beim Scrollen */
+    align-self: start; /* Verhindert, dass das Grid die Sidebar verzerrt */
+}
+    .aside-tech-specs h3 {
+        font-size: 1.7rem;
+        margin-bottom: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        padding-bottom: 10px;
+    }
+
+    .aside-tech-specs ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .aside-tech-specs li a {
+       margin-left:20px;
+    }
+    .aside-tech-specs li {
+        font-size: 1.0rem;
+        color: #e5e5e5;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+    .aside-tech-specs li strong{
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+        .aside-tech-specs li span {
+            margin-left: 20px;
+        }
+/* Sidebar-Links Navigation */
+.sidebar-link {
+    color: #ffffff !important;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+    display: inline-block;
+    padding: 4px 0;
+}
+
+    .sidebar-link:hover {
+        color: #aaaaaa !important;
+    }
+
+/* Rechter Hauptinhalt */
+.content-main {
+    background-color: rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+    .content-main h2 {
+        margin-bottom: 20px;
+        font-size: 2.8rem;
+    }
+
+    .content-main h4 {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        font-size: 1.9rem;
+    }
+
+    .content-main li {
+        margin-left: 50px;
+    }
+
+.tool-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #f0f0f0;
+    margin-bottom: 30px;
+}
+
+.content-main hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.menu-link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+    .menu-link:visited {
+        color: #ffffff;
+    }
+
+    .menu-link:hover {
+        color: #aaaaaa;
+    }
+
+/* Code Container im Unity-Stil */
+.unity-docs-code-block {
+    width: 100%;
+    max-width: 850px;
+    background-color: #1e1e1e;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 20px 0;
+    position: relative;
+    max-height: 20000px; /* Standardmäßig offen */
+    transition: max-height 0.4s ease-in-out;
+}
+
+.unity-code-header {
+    background-color: #2a2a2a;
+    padding: 6px 16px;
+    border-bottom: 1px solid #333333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+}
+
+.unity-file-name {
+    color: #c4c4c4;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* Der Kopier-Button */
+.unity-copy-btn {
+    background: transparent;
+    color: #858585;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: color 0.2s, background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .unity-copy-btn:hover {
+        background-color: #383838;
+        color: #ffffff;
+    }
+
+    .unity-copy-btn.copied {
+        color: #4ec9b0 !important;
+        background-color: #12572b;
+    }
+
+/* --- EINKLAPP-SYSTEM LOGIK --- */
+.unity-docs-code-block.collapsed {
+    max-height: none !important; /* Hauptbox passt sich dem Button an */
+}
+
+    .unity-docs-code-block.collapsed .unity-code-body {
+        max-height: 180px !important; /* Verkleinert nur die Tabelle */
+        overflow: hidden !important;
+        mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    }
+
+/* Der Auf-/Zuklapp-Button */
+.toggle-code-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #2a2a2a;
+    color: #858585;
+    border: none;
+    border-top: 1px solid #333333;
+    cursor: pointer;
+    font-family: 'Consolas', monospace;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.2s, color 0.2s;
+    text-align: center;
+}
+
+    .toggle-code-btn:hover {
+        background-color: #383838;
+        color: #ffffff;
+    }
+
+/* Fixierter Footer ganz unten */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #818382;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+    footer p {
+        color: #1a1a1a;
+        font-size: 0.95rem;
+    }
+/* Responsive Anpassung */
+
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .aside-tech-specs {
+        order: 2;
+    }
+
+    footer {
+        position: relative;
+    }
+}
+/* Butten unten */
+
+
+.download-box {
+    margin-top: 25px;
+    padding: 15px 0;
+    border-top: 1px solid #3c3c3c;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn-download-package {
+    background-color: #3e3e3e; /* Harmonisches Dunkelgrau */
+    color: #e0e0e0; /* Leicht abgedunkeltes Weiß für weicheren Kontrast */
+    border: 1px solid #555555; /* Dezenter Rand */
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+    .btn-download-package:hover {
+        background-color: #4a4a4a; /* Wird beim Drüberfahren dezent heller */
+        border-color: #007acc; /* Eleganter, blauer Akzentrand beim Hover (wie in IDEs) */
+        color: #ffffff;
+    }
+
+    .btn-download-package:active {
+        transform: scale(0.98); /* Klick-Effekt */
+        background-color: #353535;
+    }
+

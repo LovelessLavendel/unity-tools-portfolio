@@ -1,0 +1,91 @@
+﻿/**
+ * prism.css
+ * Visual Studio Dark Plus Theme - Speziell angepasst für das Tabellen-Layout
+ */
+.unity-code-body {
+    background-color: #1E1E1E !important;
+    padding: 16px 0 !important;
+    overflow-x: auto;
+}
+
+.code-table {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+}
+
+    /* Spalte 1: Die Zeilennummern */
+    .code-table td.num,
+    .code-table td.num-empty {
+        color: #858585;
+        text-align: right;
+        padding: 0 12px 0 16px !important;
+        width: 35px;
+        min-width: 35px;
+        border-right: 1px solid #3c3c3c; /* Der Trennstrich */
+        user-select: none; /* Verhindert manuelles Kopieren der Nummern */
+    }
+
+    /* Spalte 2: Der eigentliche C#-Code */
+    .code-table td.code-line {
+        padding: 0 16px 0 12px !important;
+        white-space: pre;
+        color: #D4D4D4; /* Standard-Textfarbe (Weiß/Hellgrau für normalen Text) */
+    }
+
+        /* --- REPARIERTE VISUAL STUDIO SYNTAX-FARBEN --- */
+
+        /* C# Keywords wie public, class, void, string, private (Klassisches VS-Blau) */
+        .code-table td.code-line .token.keyword {
+            color: #569CD6 !important;
+            font-weight: bold !important;
+        }
+
+        /* Kommentare (Grün) */
+        .code-table td.code-line .token.comment {
+            color: #6A9955 !important;
+            font-style: italic !important;
+        }
+
+        /* Strings / Text in Anführungszeichen wie "Assets" (Pfirsich/Orange-Braun) */
+        .code-table td.code-line .token.string {
+            color: #CE9178 !important;
+        }
+
+        /* Zahlen wie 0, 5, 10 (Hellgrün) */
+        .code-table td.code-line .token.number {
+            color: #B5CEA8 !important;
+        }
+
+        /* Klassen-Namen und Datentypen wie EditorWindow, List, Vector2 (Türkis) */
+        .code-table td.code-line .token.class-name,
+        .code-table td.code-line .token.type {
+            color: #4EC9B0 !important;
+        }
+
+        /* Unity-Funktionen und Methoden wie OnGUI, GUILayout, ShowWindow (Hellgelb) */
+        .code-table td.code-line .token.function {
+            color: #DCDCAA !important;
+        }
+
+        /* Interne Variablen, Felder und Properties (Hellblau) */
+        .code-table td.code-line .token.variable,
+        .code-table td.code-line .token.property {
+            color: #9CDCFE !important;
+        }
+
+        /* Sonderzeichen und Klammern wie { }, ( ), [ ] ; (Normales Grau) */
+        .code-table td.code-line .token.punctuation,
+        .code-table td.code-line .token.operator {
+            color: #D4D4D4 !important;
+        }
+
+        /* Präprozessoren wie #if oder Attribute wie [MenuItem] (Dunkles Gelb) */
+        .code-table td.code-line .token.preprocessor,
+        .code-table td.code-line .token.annotation {
+            color: #CBD656 !important;
+        }
+
+
