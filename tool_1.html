@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool: ASSET-CLEANER & TRACKER - S. Köhler</title>
+    <!-- Holt das Design sauber aus dem CSS-Ordner -->
+    <link rel="stylesheet" href="CSS/style.css">
+   
+</head>
+<body>
+
+    <div class="grid-container">
+
+        <!-- Header mit Titel und Zurück-Navigation -->
+        <header class="tool-header">
+            <h1>ASSET-CLEANER & TRACKER</h1>
+            <a href="index.html" class="btn-back">&larr; Zurück zum Hauptmenü</a>
+        </header>
+
+        <!-- Linke Sidebar: Technische Daten (jetzt auf der linken Seite) -->
+        <aside class="aside-tech-specs">
+            <h3> Technische Details </h3>
+            <ul>
+                <li>
+                    <strong class="label">Entwickelt für</strong>
+                    <span>Unity Engine</span>
+                </li>
+                <li>
+                    <strong class="label">Sprache / Script</strong>
+                    <span>C# (Editor Scripting)</span>
+                </li>
+                <li>
+                    <strong class="label">Kompatibilität</strong>
+                    <span>Unity 2022.3 LTS & neuer</span>
+                </li>
+                <li>
+                    <strong class="label">Features</strong>
+                    <span>Dependency Tracking, Safe-Delete</span>
+                </li>
+                <li>
+                    <strong class="label">Letztes Update</strong>
+                    <span>Ende 2026</span>
+                </li>
+                <li>
+                    <strong class="label">Quellcode</strong>
+                    <a href="script_1.html" class="btn-back">&larr; Zum Script</a>
+                </li>
+
+            </ul>
+        </aside>
+
+        <!-- Rechter Hauptinhalt: Beschreibung & Bilder des Tools -->
+        <main class="content-main">
+            <h2>Projektübersicht</h2>
+            <div class="tool-description">
+                <h4>ASSET-CLEANER &amp; TRACKER HANDBUCH</h4>
+                <p>Dieses System befreit dein Unity-Projekt vollautomatisch von ungenutzten Dateien (Datenmüll wie Sounds, Texturen oder Modellen), um die Dateigröße deines Spiels für den finalen Release drastisch zu verkleinern.</p>
+
+                <p>Es besteht aus zwei Teilen: Einem Tracker (Sicherung im Spiel) und einem Cleaner (Aufräumer im Editor).</p>
+                <p></p>
+
+                <hr>
+                <h4>WICHTIGE HINWEISE &amp; KOMPATIBILITÄT</h4>
+                <ul>
+                    <li>Unity-Versionen: Das System ist universell geschrieben und funktioniert auf allen Unity-Versionen ab Unity 5 aufwärts (inklusive Unity 2020, 2022 und neuer).</li>
+                    <li>SICHERHEIT ZUERST: Erstelle UNBEDINGT eine Sicherheitskopie (Backup) deines gesamten Projektordners, bevor du das Tool zum ersten Mal benutzt!</li>
+                    <li>LevelSpiel_Hybrid: Dieser Modus wurde ausgiebig getestet und funktioniert einwandfrei!</li>
+                    <li>OpenWorld_ReinStatisch: Dieser Bereich ist aktuell noch ungetestet. Es gibt daher keine Garantie, dass er fehlerfrei läuft. Nutzung auf eigene Gefahr!</li>
+                </ul>
+                <hr>
+
+                <h4>SCHRITT 1: DEN TRACKER IM SPIEL EINRICHTEN</h4>
+                <p>Der ComprehensiveAssetTracker muss während des Spielens im Hintergrund mitschreiben, welche Dateien geladen werden.</p>
+
+                <p>Finde deinen UI-Manager: Suche in deiner ersten Spielszene (z. B. dem Hauptmenü) das zentrale Objekt, das dein UI oder dein Spiel steuert und bereits durch ein anderes Skript mit DontDestroyOnLoad geschützt ist.</p>
+                <p>Skript hinzufügen: Ziehe das Skript ComprehensiveAssetTracker.cs als Komponente direkt auf dieses Hauptobjekt.</p>
+                <p>Fertig! Da dein UI-Manager unzerstörbar ist, reist der Tracker ab jetzt automatisch und völlig fehlerfrei durch alle Level mit. Er erstellt beim Beenden des Spiels eine Liste namens ComprehensiveUsedAssetsLog.txt.</p>
+
+                <hr>
+                <h4>SCHRITT 2: DEN CLEANER IM EDITOR ÖFFNEN</h4>
+                <p>Klicke im oberen Unity-Menü auf: Tools ➔ Release Asset Cleaner.</p>
+                <p>Ein neues Fenster öffnet sich. Das ist deine Schaltzentrale.</p>
+
+                <hr>
+                <h4>SCHRITT 3: DIE PASSENDE METHODE WÄHLEN (BEDIENUNG)</h4>
+                <p>Wähle im Fenster bei "Scan-Modus" einen der beiden Wege aus:</p>
+                <br>
+                <h3>Methode A: Der „LevelSpiel_Hybrid“-Modus (Empfohlen / Voll funktionsfähig! )</h3>
+                <p>Verwendet die echten Daten aus dem Arbeitsspeicher, die du beim Spielen gesammelt hast.</p>
+                <p>Stelle den Scan-Modus auf LevelSpiel_Hybrid.</p>
+                <p>Klicke ganz rechts auf den Reiter Reset und drücke den blauen Button 🔄 ALL CLEAR. (Das löscht alte Testdaten).</p>
+                <p>Starte dein Spiel in Unity (Play-Modus) und spiele deine Level gründlich durch. Benutze jedes UI-Menü und löse Sounds/Effekte aus.</p>
+                <p>Beende das Spiel wieder. Im Cleaner-Fenster erscheint eine grüne Infobox.</p>
+                <p>Klicke auf den grünen Button Deep-Dive Analyse starten.</p>
+                <br>
+                <h3>Methode B: Der „OpenWorld_ReinStatisch“-Modus ( Ungetestet / Keine Garantie!)</h3>
+                <p>Prüft das Projekt rein theoretisch, ohne dass du vorher herumlaufen und spielen musst.</p>
+                <p>Stelle den Scan-Modus auf OpenWorld_ReinStatisch.</p>
+                <p>Klicke direkt auf den grünen Button Deep-Dive Analyse starten.</p>
+
+                <hr>
+                <h4>SCHRITT 4: DAS PROJEKT AUFRÄUMEN (LÖSCHEN)</h4>
+                <p>Nach der Analyse zeigt dir das Tool in verschiedenen Reitern (Texturen, Audio, Prefabs etc.) alle ungenutzten Dateien an. Keine Sorge: Skripte, Shader und Szenen sind automatisch geschützt und werden niemals gelöscht!</p>
+
+                <ul>
+                    <li>Einzelne Datei löschen: Klicke in der Liste neben einem Element auf den Button Löschen.</li>
+                    <li>Ganze Kategorie löschen: Klicke ganz unten auf den Button ALLE ungenutzten dieser Kategorie löschen.</li>
+                    <li>Radikalreinigung: Gehe auf den Reiter Alles und klicke auf den großen roten Button 💥 ALL LÖSCHEN.</li>
+                </ul>
+
+                <p>Was passiert im Hintergrund? (RemoveEmptyFolders)</p>
+                <p>Das Tool verschiebt die ungenutzten Dateien aus deinem Projekt und löscht danach automatisch alle leeren Ordner und deren .meta-Dateien, damit deine Ordnerstruktur im Unity-Projekt blitzsauber bleibt.</p>
+
+                <hr>
+                <h4>SCHRITT 5: DAS INTERNE SICHERHEITSNETZ (WIEDERHERSTELLUNG)</h4>
+                <p>Dein Code besitzt eine eingebaute Lebensversicherung. Wenn du auf "Löschen" klickst, werden die Daten nicht vernichtet, sondern in einen geheimen Backup-Ordner (AssetCleaner_Release_Backup) außerhalb deines Assets-Ordners verschoben.</p>
+
+                <ul>
+                    <li>Fehler gemacht? Wenn du merkst, dass ein gelöschtes Asset doch gebraucht wurde, klicke im Tool einfach auf den roten Button RÜCKGÄNGIG: Backup (RestoreBackup).</li>
+                    <li>Das Ergebnis: Das Tool holt absolut alle verschobenen Dateien und deren wichtige .meta-Importeinstellungen blitzschnell an ihren exakten Ursprungsort in deinem Projekt zurück. Alles ist sofort wieder wie vorher!</li>
+                </ul>
+
+                <hr>
+
+            </div>
+
+
+            <!-- Hier kannst du später Bilder aus Unity einfügen via <img src="..."> -->
+            <div class="media-placeholder">
+                [ Hier Screenshot oder GIF des Tools einfügen ]
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Einheits-Footer mit anonymisiertem Namen -->
+    <footer>
+        <p>&copy; 2026, S. Köhler</p>
+    </footer>
+
+</body>
+</html>
